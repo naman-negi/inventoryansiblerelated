@@ -1,0 +1,25 @@
+---
+- hosts: webservers
+  tasks:
+    - name: Remove Docker container
+      docker_container:
+        name: Ecommerce
+        state: absent
+
+    - name: Remove Docker image
+      docker_image:
+        name: Ecommerce
+        state: absent
+
+    - name: Build Docker image
+      docker_image:
+        path: ""
+        name: Ecommerce
+        source: build
+
+    - name: Run Docker container
+      docker_container:
+        name: Ecommerce
+        image: Ecommerce
+        published_ports:
+          - "8080:8080"
