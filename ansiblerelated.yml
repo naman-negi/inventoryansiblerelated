@@ -1,5 +1,6 @@
 ---
 - hosts: webservers
+  become: yes
   tasks:
     - name: Remove Docker container
       docker_container:
