@@ -14,7 +14,7 @@
 
     - name: Build Docker image
       docker_image:
-        path: "/home/namanv2/"
+        path: "/home/namanv2/Dockerfile.txt"
         name: Ecommerce
         source: build
 
