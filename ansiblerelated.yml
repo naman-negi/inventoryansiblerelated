@@ -17,6 +17,7 @@
         path: "/home/namanv2"
         name: ecommerce
         source: build
+        dockerfile: Dockerfile.txt
 
     - name: Run Docker container
       docker_container:
