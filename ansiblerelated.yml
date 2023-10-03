@@ -4,23 +4,23 @@
   tasks:
     - name: Remove Docker container
       docker_container:
-        name: Ecommerce
+        name: ecommerce
         state: absent
 
     - name: Remove Docker image
       docker_image:
-        name: Ecommerce
+        name: ecommerce
         state: absent
 
     - name: Build Docker image
       docker_image:
         path: "/home/namanv2/"
-        name: Ecommerce
+        name: ecommerce
         source: build
 
     - name: Run Docker container
       docker_container:
-        name: Ecommerce
-        image: Ecommerce
+        name: ecommerce
+        image: ecommerce
         published_ports:
           - "8080:8080"
